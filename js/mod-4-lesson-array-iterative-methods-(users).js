@@ -154,11 +154,157 @@ const users = [
 
 // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 // 27/48
-//
-console.log();
+//Доповни функцію getInactiveUsers(users) таким чином, щоб вона повертала масив неактивних користувачів, значення властивості isActive яких - false.
+
+// const getInactiveUsers = users => users.filter(user => user.isActive === false);
+
+// console.log(getInactiveUsers(users));
 
 // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-console.log();
+// 29/48
+// Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала об'єкт користувача, пошта якого (властивість email) збігається зі значенням параметра email.
+
+// const getUserWithEmail = (users, email) =>
+//   users.find(user => user.email === email);
+
+// console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
 
 // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 31/48
+// Доповни функцію isEveryUserActive(users) таким чином, щоб вона перевіряла, чи всі користувачі зараз активні (властивість isActive) і повертала true або false.
+
+// const isEveryUserActive = users => users.every(user => user.isActive === true);
+
+// console.log(isEveryUserActive(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 33/48
+/* 
+Доповни функцію isAnyUserActive(users) таким чином, щоб вона перевіряла наявність активних користувачів (властивість isActive) і повертала true або false.
+*/
+
+// const isAnyUserActive = users => users.some(user => user.isActive);
+
+// console.log(isAnyUserActive(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 36/48
+/*
+Доповни функцію calculateTotalBalance(users) таким чином, щоб вона рахувала і повертала суму всіх коштів (властивість balance), які зберігають користувачі з масиву users.
+*/
+
+// const calculateTotalBalance = users =>
+//   users
+//     .map(user => user.balance)
+//     .reduce((previousBalance, balance) => previousBalance + balance, 0);
+
+// console.log(calculateTotalBalance(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 37/48
+/*
+Доповни функцію getTotalFriendCount(users) таким чином, щоб вона рахувала і повертала загальну кількість друзів (властивість friends) усіх користувачів з масиву users.
+*/
+
+// const getTotalFriendCount = users => {
+//   return users.reduce((allFriends, user) => {
+//     allFriends.push(...user.friends);
+//     return allFriends;
+//   }, []).length;
+// };
+
+// console.log('загальну кількість друзів: ', getTotalFriendCount(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 42/48
+/*
+Доповни функцію sortByAscendingBalance(users) таким чином, щоб вона повертала масив користувачів, відсортований за зростанням їх балансу (властивість balance).
+*/
+
+// const sortByAscendingBalance = users =>
+//   [...users].sort(
+//     (firstUser, secondUser) => firstUser.balance - secondUser.balance,
+//   );
+
+// console.log(sortByAscendingBalance(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 43/48
+/*
+Доповни функцію sortByDescendingFriendCount(users) таким чином, щоб вона повертала масив користувачів, відсортований за спаданням кількості їхніх друзів (властивість friends).
+*/
+
+// const sortByDescendingFriendCount = users =>
+//   [...users].sort(
+//     (firstFriend, secondFriend) =>
+//       secondFriend.friends.length - firstFriend.friends.length,
+//   );
+
+// console.log(sortByDescendingFriendCount(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 44/48
+/*
+Доповни функцію sortByName(users) таким чином, щоб вона повертала масив користувачів, відсортований за їх ім'ям (властивість name) в алфавітному порядку.
+*/
+
+// const sortByName = users =>
+//   [...users].sort((firstName, secondName) =>
+//     firstName.name.localeCompare(secondName.name),
+//   );
+
+// console.log(sortByName(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 46/48
+/*
+Доповни функцію getNamesSortedByFriendCount(users) таким чином, щоб вона повертала масив імен користувачів, відсортований за зростанням кількості їхніх друзів (властивість friends).
+*/
+
+// const getNamesSortedByFriendCount = users =>
+//   [...users]
+//     .sort(
+//       (lessFriend, moreFriend) =>
+//         lessFriend.friends.length - moreFriend.friends.length,
+//     )
+//     .map(user => user.name);
+
+// console.log(getNamesSortedByFriendCount(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 47/48
+/*
+Доповни функцію getSortedFriends(users) таким чином, щоб вона повертала масив унікальних імен друзів (властивість friends), відсортований за алфавітом.
+*/
+
+// const getSortedFriends = users =>
+//   users
+//     .flatMap(user => user.friends)
+//     .filter((friends, index, array) => array.indexOf(friends) === index)
+//     .sort((firstName, secondName) => firstName.localeCompare(secondName));
+
+// console.log(getSortedFriends(users));
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 48/48
+/*
+Доповни функцію getTotalBalanceByGender(users, gender) таким чином, щоб вона повертала загальний баланс користувачів (властивість balance), стать яких (властивість gender) збігається зі значенням параметра gender.
+*/
+
+// const getTotalBalanceByGender = (users, gender) =>
+//   users
+//     .filter(user => user.gender === gender)
+//     .reduce((totalBalance, user) => totalBalance + user.balance, 0);
+
+// console.log(
+//   'maleGender TotalBalance: ',
+//   getTotalBalanceByGender(users, 'male'),
+// );
+// console.log(
+//   'femaleGender TotalBalance: ',
+//   getTotalBalanceByGender(users, 'female'),
+// );
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
 console.log();

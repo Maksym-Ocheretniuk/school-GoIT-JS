@@ -34,6 +34,11 @@ const books = [
 const MIN_RATING = 8;
 const AUTHOR = 'Bernard Cornwell';
 
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR2 = 'Robert Sheckley';
+
+const MIN_BOOK_RATING = 8;
+
 // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 // 15/48
 // Використовуючи метод map(), зроби так, щоб у змінній titles вийшов масив назв книг (властивість title) з усіх об'єктів масиву books.
@@ -74,6 +79,68 @@ const AUTHOR = 'Bernard Cornwell';
 // console.log(booksByAuthor);
 
 // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 28/48
+// Використовуючи метод find(), доповни код таким чином, щоб:
+// У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+// У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
+
+// const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book => book.author === AUTHOR2);
+
+// console.log(bookWithTitle);
+// console.log(bookByAuthor);
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 41/48
+/*
+Доповни код таким чином, щоб:
+
+У змінній sortedByAuthorName вийшов масив книг, відсортований за ім'ям автора в алфавітному порядку.
+У змінній sortedByReversedAuthorName вийшов масив книг, відсортований за ім'ям автора у зворотному алфавітному порядку.
+У змінній sortedByAscendingRating вийшов масив книг, відсортований за зростанням рейтингу.
+У змінній sortedByDescentingRating вийшов масив книг, відсортований за спаданням рейтингу.
+*/
+
+// const sortedByAuthorName = [...books].sort((firstAuthor, secondAuthor) =>
+//   firstAuthor.author.localeCompare(secondAuthor.author),
+// );
+
+// const sortedByReversedAuthorName = [...books].sort(
+//   (firstAuthor, secondAuthor) =>
+//     secondAuthor.author.localeCompare(firstAuthor.author),
+// );
+
+// const sortedByAscendingRating = [...books].sort(
+//   (firstRating, secondRating) => firstRating.rating - secondRating.rating,
+// );
+
+// const sortedByDescentingRating = [...books].sort(
+//   (firstRating, secondRating) => secondRating.rating - firstRating.rating,
+// );
+
+// console.log('sortedByAuthorName ', sortedByAuthorName);
+// console.log('sortedByReversedAuthorName ', sortedByReversedAuthorName);
+// console.log('sortedByAscendingRating ', sortedByAscendingRating);
+// console.log('sortedByDescentingRating ', sortedByDescentingRating);
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+// 45/48
+/*
+Доповни код таким чином, щоб у змінній names вийшов масив імен авторів в алфавітному порядку, рейтинг книг яких більший за значення змінної MIN_BOOK_RATING.
+*/
+
+// const names = books
+//   .filter(book => book.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)
+//   .sort((firstAuthor, secondAuthor) => firstAuthor.localeCompare(secondAuthor));
+
+// console.log(names);
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 console.log();
+
+// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+console.log();
+
 // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 console.log();
